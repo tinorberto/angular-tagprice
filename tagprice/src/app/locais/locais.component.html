@@ -1,5 +1,7 @@
 
 
 <ul class="list-group">
-  <li *ngFor="let l of locais" class="list-group-item">{{l.nome}}</li>
+  <li *ngFor="let l of locais" class="list-group-item">
+    <a [routerLink]="['../local' , l.id]">{{l.nome}} </a>
+    </li>
 </ul>

@@ -6,16 +6,20 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { LocaisComponent } from './locais/locais.component';
+import { LocalDetalheComponent } from './locais/local-detalhe/local-detalhe.component';
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LocaisComponent
+    LocaisComponent,
+    LocalDetalheComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [LocalService],
   bootstrap: [AppComponent]
