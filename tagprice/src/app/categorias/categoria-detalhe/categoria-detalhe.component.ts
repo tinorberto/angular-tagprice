@@ -1,24 +1,24 @@
-import { LocalService } from '../local.service';
+import { CategoriaService } from '../categoria.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
-import { Local} from '../local';
-
+import { Categoria} from '../categoria';
 @Component({
-  selector: 'app-local-detalhe',
-  templateUrl: './local-detalhe.component.html',
-  styleUrls: ['./local-detalhe.component.css']
+  selector: 'app-categoria-detalhe',
+  templateUrl: './categoria-detalhe.component.html',
+  styleUrls: ['./categoria-detalhe.component.css']
 })
-export class LocalDetalheComponent implements OnInit {
+export class CategoriaDetalheComponent implements OnInit {
+
 
 inscricao: Subscription;
 idLocal : number;
-local : Local;
+categoria : Categoria;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private localService : LocalService
+    private categoriaService : CategoriaService
   ) { }
 
   ngOnInit() {
@@ -26,7 +26,7 @@ local : Local;
       (params: any) => {
         let id = params['id'];
         this.idLocal = id;
-        this.local = this.localService.getLocalbyId(id);
+        this.categoria = this.categoriaService.getLocalbyId(id);
       }
      );
   }

@@ -1,0 +1,21 @@
+<div class="row">
+
+<div class="col-md-6 col-sm-6">
+
+<div class="input-group">
+  <span class="input-group-addon"></span>
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+</div>
+<br>
+  <ul class="list-group">
+    <li *ngFor="let l of produtos" class="list-group-item">
+      <a [routerLink]="['/produtos' , l.id]">{{l.nome}} </a>
+      </li>
+  </ul>
+  <br>
+  <input class="btn btn-primary" routerLink="/produtos/novo" type="button" value="Adicionar Produto">
+</div>
+<div class="col-md-6 col-sm-6">
+  <router-outlet></router-outlet>
+</div>
+</div>

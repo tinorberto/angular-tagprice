@@ -1,6 +1,6 @@
-import { LocalService } from './../local.service';
+import { LocalService } from './local.service';
 import { Component, OnInit } from '@angular/core';
-import {Local}  from './../local';
+import {Local}  from './local';
 @Component({
   selector: 'app-locais',
   templateUrl: './locais.component.html',

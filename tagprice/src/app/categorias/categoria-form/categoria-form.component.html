@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-6 col-sm-6">
+  <p>
+    Criar novo local
+  </p>
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Identificador:</label>
+      <input type="email" class="form-control" name="id" [(ngModel)]="categoria.id">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Nome:</label>
+      <input type="email" class="form-control" name="nome" [(ngModel)]="categria.nome"/>
+    </div>
+    <input class="btn btn-primary" (click)="criarCategria($event)" type="button" value="Adicionar Categoria">
+  </form>
+  </div>
+</div>

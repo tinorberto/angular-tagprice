@@ -1,7 +1,15 @@
+<div class="row">
 
-
-<ul class="list-group">
-  <li *ngFor="let l of locais" class="list-group-item">
-    <a [routerLink]="['../local' , l.id]">{{l.nome}} </a>
-    </li>
-</ul>
+<div class="col-md-6 col-sm-6">
+  <ul class="list-group">
+    <li *ngFor="let l of locais" class="list-group-item">
+      <a [routerLink]="['/locais' , l.id]">{{l.nome}} </a>
+      </li>
+  </ul>
+  <br>
+  <input class="btn btn-primary" routerLink="/locais/novo" type="button" value="Adicionar Local">
+</div>
+<div class="col-md-6 col-sm-6">
+  <router-outlet></router-outlet>
+</div>
+</div>
