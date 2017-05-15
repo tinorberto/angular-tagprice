@@ -21,12 +21,16 @@ local : Local;
     private localService : LocalService
   ) { }
 
+
+
   ngOnInit() {
      this.inscricao = this.route.params.subscribe(
       (params: any) => {
         let id = params['id'];
-        this.idLocal = id;
-        this.local = this.localService.getLocalbyId(id);
+        //this.idLocal = id;
+        console.log(id);
+         this.local = new Local();
+        this.localService.getLocalbyId(id).subscribe(data => this.local = data);
       }
      );
   }

@@ -7,12 +7,12 @@ import {Local}  from './local';
   styleUrls: ['./locais.component.css']
 })
 export class LocaisComponent implements OnInit {
-  locais : Local[];
+  locais : Local[] = [];
 
   constructor(private localService:LocalService) { }
 
   ngOnInit() {
-    this.locais = this.localService.getAll();
+   this.localService.getAll().subscribe(data => this.locais = data);
   }
 
 }

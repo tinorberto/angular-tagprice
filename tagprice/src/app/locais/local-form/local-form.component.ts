@@ -18,7 +18,7 @@ export class LocalFormComponent implements OnInit {
   }
 
   criarLocal(){
-    console.log(this.local.id);
+    console.log(this.local.idLocal);
 
   }
 

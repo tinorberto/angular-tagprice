@@ -1,9 +1,8 @@
 <div class="row">
-
 <div class="col-md-6 col-sm-6">
   <ul class="list-group">
     <li *ngFor="let l of locais" class="list-group-item">
-      <a [routerLink]="['/locais' , l.id]">{{l.nome}} </a>
+      <a [routerLink]="['/locais' , l.idLocal]">{{l.nomeLocal}} </a>
       </li>
   </ul>
   <br>

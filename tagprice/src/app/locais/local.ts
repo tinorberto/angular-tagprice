@@ -1,6 +1,6 @@
 export class Local {
-  id: number;
-  nome: string = '';
+  idLocal: number;
+  nomeLocal: string = '';
 
   constructor(values: Object = {}) {
     Object.assign(this, values);

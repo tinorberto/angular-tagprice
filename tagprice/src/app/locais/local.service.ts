@@ -1,15 +1,21 @@
 import { Local } from './local';
 import { Injectable } from '@angular/core';
+import 'rxjs/add/operator/map'
+import {Http, Response} from '@angular/http'; 
+import {Observable} from 'rxjs/Rx';
 
 @Injectable()
 export class LocalService {
 
-  locais : Local[] = [ new Local({id: 1, nome: 'Supermercado Brasil'}),
+  urlRestService = "http://localhost:8080/tagprice/service/";
+  locais :  Array<Local>;
+/*  locais : Local[] = [ new Local({id: 1, nome: 'Supermercado Brasil'}),
                       new Local({id: 2, nome: 'Supermercado BH'}),
-                      new Local({id: 3, nome: 'Supermercado EPA'})  ];
+                      new Local({id: 3, nome: 'Supermercado EPA'})  */ 
 
-  getAll(): Local[]{
-    return this.locais;
+  getAll() {
+     //this.locais = new Array();
+     return this.http.get(this.urlRestService+"local").map(res =>res.json());
   }
 
   addLocal(l :Local){
@@ -17,10 +23,9 @@ export class LocalService {
   }
 
   getLocalbyId(id){
-    console.log(this.locais.find(item => item.id == id));
-    return  this.locais.find(item => item.id == id);
+    return this.http.get(this.urlRestService+"local/"+id).map(res =>res.json());
   }
 
-  constructor() { }
+  constructor(private http:Http) { }
 
 }
